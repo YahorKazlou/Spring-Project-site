@@ -1,6 +1,58 @@
 body {
-  font-family: Metropolis, sans-serif;
+  font-family: "Metropolis", sans-serif;
 }
+
+.header {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ebf2f2;
+}
+
+/* .navbar-mobile {
+  border-bottom: 1px solid #ebf2f2;
+} */
+
+/* .navbar-menu {
+  font-weight: 500;
+} */
+
+.navbar-link {
+  font-weight: 500;
+}
+
+.navbar-burger {
+  color: #4a4a4a;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.logo {
+  width: 300px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.logo .st0,
+.logo .st1 {
+  fill: #6cb52d;
+}
+
+.logo .st3 {
+  fill: #fff;
+}
+
+.svg-inline--fa {
+  margin-left: 8px;
+  height: 1em;
+}
+
+h1 {
+  font-weight: bold;
+}
+
 a {
   color: #000000;
   text-decoration: none;
@@ -10,15 +62,33 @@ a:hover {
   text-decoration: none;
 }
 
+.description {
+  margin-top: 20px;
+}
+
+.py-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .project-info h1 {
-  font-weight: 500;
   font-size: 1.5rem;
 }
 
-.hero h1 {
+.my-6 {
+  padding: 3rem 2rem;
+}
+
+.my-6 h1 {
   font-size: 3.5rem;
   margin-top: 40px;
-  font-weight: 500;
+}
+
+.description {
+  font-weight: 400;
+  line-height: 2.2rem;
+  margin-top: 20px;
+  font-size: 1.5rem;
 }
 
 .is-hidden-desktop {
@@ -42,12 +112,23 @@ a:hover {
 .item {
   display: block;
   background-color: #ffffff;
+  padding: 30px 20px;
+}
+
+.container {
+  padding: 32px;
+}
+
+.columns {
+  margin-left: 84px;
+  margin-right: 84px;
 }
 
 article {
   flex-basis: 40%;
   flex-grow: 1;
   padding: 0.75rem;
+  display: flex;
 }
 
 .is-specialitem {
@@ -70,6 +151,11 @@ article {
   max-width: 120px;
 }
 
+.py-3 {
+  padding: 0.75em 0;
+  line-height: 1.7rem;
+}
+
 @media (max-width: 1000px) {
   .is-hidden-desktop {
     display: block !important;
@@ -82,11 +168,35 @@ article {
   .project-item {
     flex-direction: column;
   }
+
+  .description {
+    font-size: 1.3rem;
+  }
+
+  .columns {
+    margin-left: 82px;
+    margin-right: 82px;
+  }
+
+  .logo {
+    width: 200px;
+  }
 }
 
 @media (min-width: 800px) and (max-width: 1000px) {
+  .columns {
+    margin-left: 82px;
+    margin-right: 82px;
+  }
 }
 
 @media (max-width: 800px) {
-  /* … */
+  .columns {
+    margin-left: 64px;
+    margin-right: 64px;
+  }
+
+  article {
+    flex-basis: 80%;
+  }
 }
