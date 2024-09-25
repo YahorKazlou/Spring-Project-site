@@ -1,1 +1,92 @@
-Projects 
+body {
+  font-family: Metropolis, sans-serif;
+}
+a {
+  color: #000000;
+  text-decoration: none;
+}
+a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+.project-info h1 {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-top: 40px;
+  font-weight: 500;
+}
+
+.is-hidden-desktop {
+  display: none !important;
+}
+
+.has-background-light {
+  background-color: #ebf2f2 !important;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: stretch;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 82.5%;
+}
+
+.item {
+  display: block;
+  background-color: #ffffff;
+}
+
+article {
+  flex-basis: 40%;
+  flex-grow: 1;
+  padding: 0.75rem;
+}
+
+.is-specialitem {
+}
+
+.project-item {
+  display: flex;
+  gap: 20px;
+}
+
+.project-item > .image {
+  flex: 1 1;
+  min-width: 120px;
+  /* padding-right: 20px; */
+  text-align: center;
+}
+
+.project-item > .image > img {
+  height: 120px;
+  max-width: 120px;
+}
+
+@media (max-width: 1000px) {
+  .is-hidden-desktop {
+    display: block !important;
+  }
+
+  .is-hidden-mobile {
+    display: none !important;
+  }
+
+  .project-item {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1000px) {
+}
+
+@media (max-width: 800px) {
+  /* … */
+}
