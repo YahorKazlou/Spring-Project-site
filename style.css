@@ -78,6 +78,8 @@ body {
 
 .navbar-item:hover > .navbar-dropdown {
   display: block;
+  opacity: 1;
+  transition: all 0.3s;
 }
 
 .mb-5 {
@@ -89,10 +91,20 @@ body {
   font-size: 0.8rem;
 }
 
+a.navbar-item {
+  color: #111
+  transition: color 0.5s ease;
+}
+
+a.navbar-item:hover {
+  color: #8fdf82;
+}
+
 .navbar-dropdown {
   position: absolute;
   top: calc(100% - 20px);
   display: none;
+  opacity: 0;
   background-color: #fff;
   border: 0;
   box-shadow: 0 5px 30px 0 rgba(108, 135, 135, 0.5);
@@ -142,6 +154,26 @@ a {
   color: #000000;
   text-decoration: none;
 }
+
+a.box.is-special:focus,
+a.box.is-special:hover {
+  box-shadow: 0 10px 20px 0 rgba(108, 135, 135, 0.2);
+  text-decoration: none;
+  top: -3px;
+  transform: translateY(-3px);
+}
+
+a.box.is-special {
+  box-shadow: none;
+  box-shadow: 0 0 0 rgba(108, 135, 135, 0.2);
+  transform: translateY(0);
+  transition: all 0.2s;
+}
+
+.main a:hover {
+  text-decoration: underline;
+}
+
 a:hover {
   color: #000000;
   text-decoration: none;
@@ -175,7 +207,9 @@ a:hover {
   margin-top: 20px;
   font-size: 1.5rem;
   max-width: 960px;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
 }
 
 .is-hidden-desktop {
@@ -240,7 +274,9 @@ article {
 .py-3 {
   padding: 0.75em 0;
   line-height: 1.7rem;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
 }
 
 @media (max-width: 1000px) {
