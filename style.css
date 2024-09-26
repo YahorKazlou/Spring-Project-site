@@ -60,6 +60,7 @@ body {
 }
 
 .navbar-menu {
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -246,7 +247,7 @@ a:hover {
 }
 
 .container {
-  padding: 32px;
+  padding: 48px;
 }
 
 .columns {
@@ -285,13 +286,46 @@ article {
     sans-serif;
 }
 
+.button.is-spring {
+  text-transform: uppercase;
+  background: transparent;
+  border: 2px solid #111;
+  display: inline-block;
+  font-size: .9rem;
+  font-weight: 700;
+  height: auto;
+  line-height: 20px;
+  overflow: hidden;
+  padding: 15px 30px;
+  position: relative;
+  cursor: pointer;
+  transition: color .2s ease-in-out;
+  z-index: 0;
+}
+
+.button.is-spring::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background: #191e1e;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: -1
+}
+
+.button.is-spring:hover {
+  color: white;
+}
+
+.button.is-spring:hover::before {
+  transform: translateX(0)
+}
+
 @media (min-width: 1000px) {
-  .my-6 {
-    max-width: 960px;
-  }
-  .navbar-brand {
-    margin-left: +2.7rem;
-  }
+  
 }
 
 @media (max-width: 1000px) {
