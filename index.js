@@ -60,25 +60,46 @@ const navArray = [
   },
 ];
 
+const createDOMElement = ({ tag, className, textContent }) => {
+  const element = document.createElement(tag);
+  if (className) {
+    element.className = className;
+  }
+  if (textContent) {
+    element.textContent = textContent;
+  }
+
+  return element;
+};
+
 const populateDesktopNavbar = () => {
   let navbarMenu = document.getElementsByClassName("navbar-menu")[0];
   navArray.forEach((item) => {
-    const navbarItem = document.createElement("div");
-    navbarItem.className =
-      "navbar-item has-dropdown is-hoverable navbar-group-item";
-    const navbarItemText = document.createElement("span");
-    navbarItemText.className = "navbar-link";
-    navbarItemText.textContent = item.title;
+    const navbarItem = createDOMElement({
+      tag: "div",
+      className: "navbar-item has-dropdown is-hoverable navbar-group-item",
+    });
+    const navbarItemText = createDOMElement({
+      tag: "span",
+      className: "navbar-link",
+      textContent: item.title,
+    });
     navbarItem.appendChild(navbarItemText);
 
-    const navbarItemChildren = document.createElement("ul");
-    navbarItemChildren.className = "navbar-dropdown is-boxed";
+    const navbarItemChildren = createDOMElement({
+      tag: "ul",
+      className: "navbar-dropdown is-boxed",
+    });
 
     item.items.forEach((childItem) => {
-      const navbarChild = document.createElement("li");
-      const navbarChildLink = document.createElement("a");
-      navbarChildLink.className = "navbar-item";
-      navbarChildLink.textContent = childItem.name;
+      const navbarChild = createDOMElement({
+        tag: "li",
+      });
+      const navbarChildLink = createDOMElement({
+        tag: "a",
+        className: "navbar-item",
+        textContent: childItem.name,
+      });
       navbarChild.appendChild(navbarChildLink);
       navbarItemChildren.appendChild(navbarChild);
     });
