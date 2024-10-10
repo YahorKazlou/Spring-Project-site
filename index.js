@@ -76,8 +76,10 @@ const populateDesktopNavbar = () => {
 
     item.items.forEach((childItem) => {
       const navbarChild = document.createElement("li");
-      // TODO replace with link instead of plin text
-      navbarChild.textContent = childItem.name;
+      const navbarChildLink = document.createElement("a");
+      navbarChildLink.className = "navbar-item";
+      navbarChildLink.textContent = childItem.name;
+      navbarChild.appendChild(navbarChildLink);
       navbarItemChildren.appendChild(navbarChild);
     });
     navbarItem.appendChild(navbarItemChildren);
