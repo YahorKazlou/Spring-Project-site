@@ -5,13 +5,21 @@
       name="viewport"
       content="width=device-width, initial-scale=1"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <link href="https://fonts.cdnfonts.com/css/metropolis-2" rel="stylesheet" />
     <link rel="stylesheet" href="css-reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="header">
-      <div class="navbar-desktop is-hidden-mobile is-hidden-tablet-only">
+      <div
+        class="container navbar-desktop is-hidden-mobile is-hidden-tablet-only"
+      >
         <div class="navbar-brand">
           <a class="navbar-item" href="">
             <svg
@@ -330,7 +338,7 @@
           </div>
         </div>
       </div>
-      <div class="navbar-mobile is-hidden-desktop">
+      <div class="container navbar-mobile is-hidden-desktop">
         <div class="navbar-brand">
           <a class="navbar-item" title="Logo" href="/"
             ><svg
@@ -511,23 +519,24 @@
       </div>
     </div>
     <div class="main projects">
-      <div class="container my-6">
-        <h1>Projects</h1>
+      <div class="markdown hero">
+        <div class="container my-6">
+          <h1>Projects</h1>
 
-        <div class="description">
-          From configuration to security, web apps to big data—whatever the
-          infrastructure needs of your application may be, there is a Spring
-          Project to help you build it. Start small and use just what you
-          need—Spring is modular by design.
-        </div>
+          <div class="description">
+            From configuration to security, web apps to big data—whatever the
+            infrastructure needs of your application may be, there is a Spring
+            Project to help you build it. Start small and use just what you
+            need—Spring is modular by design.
+          </div>
 
-        <div class="pt-4">
-          <a href="#release-calendar" class="animate-anchor button is-spring"
-            >Release Calendar</a
-          >
+          <div class="pt-4">
+            <a href="#release-calendar" class="animate-anchor button is-spring"
+              >Release Calendar</a
+            >
+          </div>
         </div>
       </div>
-
       <div class="has-background-light py-6 has-bing-bordder-bottom">
         <div class="container">
           <div class="list columns is-multiline ph-6">
