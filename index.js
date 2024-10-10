@@ -60,13 +60,32 @@ const navArray = [
   },
 ];
 
-const collection = document.getElementsByClassName("example");
+const populateDesktopNavbar = () => {
+  let navbarMenu = document.getElementsByClassName("navbar-menu")[0];
+  navArray.forEach((item) => {
+    const navbarItem = document.createElement("div");
+    navbarItem.className =
+      "navbar-item has-dropdown is-hoverable navbar-group-item";
+    const navbarItemText = document.createElement("span");
+    navbarItemText.className = "navbar-link";
+    navbarItemText.textContent = item.title;
+    navbarItem.appendChild(navbarItemText);
 
-window.onload = function () {
-  yourFunction(param1, param2);
+    const navbarItemChildren = document.createElement("ul");
+    navbarItemChildren.className = "navbar-dropdown is-boxed";
+
+    item.items.forEach((childItem) => {
+      const navbarChild = document.createElement("li");
+      // TODO replace with link instead of plin text
+      navbarChild.textContent = childItem.name;
+      navbarItemChildren.appendChild(navbarChild);
+    });
+    navbarItem.appendChild(navbarItemChildren);
+
+    navbarMenu.appendChild(navbarItem);
+  });
 };
 
-document.forms[0].appendChild(document.createElement("input")).className =
-  "foo";
-
-classList;
+window.onload = function () {
+  populateDesktopNavbar();
+};
