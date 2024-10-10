@@ -118,7 +118,6 @@ a.navbar-item:hover {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   z-index: 99;
-
   white-space: nowrap;
 }
 
@@ -331,9 +330,6 @@ article {
   transform: translateX(0);
 }
 
-@media (min-width: 1000px) {
-}
-
 @media (max-width: 1000px) {
   .is-hidden-desktop {
     display: block !important;
@@ -341,6 +337,17 @@ article {
 
   .is-hidden-mobile {
     display: none !important;
+  }
+
+  .header {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background: white;
+  }
+
+  .main {
+    padding-top: 52px;
   }
 
   .project-item {
