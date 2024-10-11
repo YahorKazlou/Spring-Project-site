@@ -134,12 +134,9 @@ const populateNavbar = (menuClass, classNames, isMenuSectionClickable) => {
 };
 
 window.onload = function () {
-  const isDesktop = window.innerWidth > 1000;
-  populateNavbar(
-    isDesktop ? "navbar-menu-desktop" : "navbar-menu-mobile",
-    isDesktop ? classNamesDesktop : classNamesMobile,
-    !isDesktop,
-  );
+  populateNavbar("navbar-menu-mobile", classNamesMobile, true);
+
+  populateNavbar("navbar-menu-desktop", classNamesDesktop, false);
 };
 
 let isMenuOpen = false;
