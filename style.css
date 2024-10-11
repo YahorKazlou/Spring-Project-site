@@ -39,7 +39,7 @@ body {
   margin-top: -0.6em;
   pointer-events: none;
   position: absolute;
-  top: 50%;
+  top: 60%;
   transform: rotate(-45deg);
   transform-origin: center;
   width: 0.625em;
@@ -331,6 +331,12 @@ article {
     color: #086dc3 !important;
     margin-bottom: 24px;
   }
+  a.navbar-item {
+    font-family: "Open Sans", sans-serif;
+  }
+  li {
+    height: 36px;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -370,7 +376,7 @@ article {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background: #191e1e;
     transform: translateY(-100%);
@@ -438,7 +444,12 @@ article {
   .mb-5 {
     color: #98afae !important;
     font-family: "Open Sans", sans-serif;
+    margin-bottom: 24px;
   }
+
+  div.navbar-menu-mobile {
+  }
+
   .navbar-menu-mobile div.navbar-item {
     font-size: 19.2px;
     padding: 0px 0px;
@@ -448,6 +459,14 @@ article {
   }
   .header {
     padding: 8px 12px;
+  }
+  span.navbar-link {
+    height: 59px;
+  }
+  .navbar-link:not(.is-arrowless):after {
+    border: solid #98afae;
+    border-width: 0 0 3px 3px;
+    scale: 0.7;
   }
 }
 
