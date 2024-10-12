@@ -87,3 +87,35 @@ const populateProject = (projectClass) => {
     projectElement.appendChild(articleItem);
   });
 };
+
+displayProjects(projects);
+
+function displayProjects(projectsToDisplay) {
+  // 1. get conteiner element
+  // 2. clear projects on screen
+  // projects.innerHTML = "";
+
+  if (projectsToDisplay.length === 0) {
+  //   projects.textContent = "No results";
+  //   return;
+  } else {
+// generate projects
+
+  }
+}
+
+function filterProjects(event) {
+  const searchTerm = event.target.value.toLowerCase();
+// what if search temr empty????
+  const filteredProjects = projects.filter(
+    (project) =>
+      project.name.toLowerCase().includes(searchTerm) ||
+      project.description.toLowerCase().includes(searchTerm),
+  );
+
+  displayProjects(filteredProjects);
+}
+
+document
+  .getElementsByClassName("searchInput")
+  .addEventListener("input", filterProjects);

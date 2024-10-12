@@ -3,5 +3,9 @@ window.onload = function () {
 
   populateNavbar("navbar-menu-desktop", false);
 
-  populateProject("list");
+  populateProject();
+
+  document
+    .getElementsByClassName("searchInput")[0]
+    .addEventListener("input", filterProjects);
 };
