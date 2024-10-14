@@ -7,5 +7,5 @@ window.onload = function () {
 
   document
     .getElementsByClassName("searchInput")[0]
-    .addEventListener("input", filterProjects);
+    .addEventListener("input", debounce(filterProjects, 300));
 };

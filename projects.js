@@ -37,9 +37,10 @@ const projects = [
   },
 ];
 
-const populateProject = (projectClass) => {
-  let projectElement = document.getElementsByClassName(projectClass)[0];
-  projects.forEach((item) => {
+const generateProjects = (projectsArray) => {
+  const elementsArray = [];
+
+  projectsArray.forEach((item) => {
     const articleItem = createDOMElement({
       tag: "article",
     });
@@ -84,38 +85,49 @@ const populateProject = (projectClass) => {
     boxItem.appendChild(projectItem);
     articleItem.appendChild(boxItem);
 
-    projectElement.appendChild(articleItem);
+    elementsArray.push(articleItem);
   });
+
+  return elementsArray;
 };
 
-displayProjects(projects);
+const populateProject = () => {
+  let projectElement = document.getElementsByClassName("list")[0];
+
+  const childElements = generateProjects(projects);
+
+  childElements.forEach((child) => projectElement.appendChild(child));
+};
 
 function displayProjects(projectsToDisplay) {
-  // 1. get conteiner element
-  // 2. clear projects on screen
-  // projects.innerHTML = "";
-
+  let container = document.getElementsByClassName("list")[0];
   if (projectsToDisplay.length === 0) {
-  //   projects.textContent = "No results";
-  //   return;
+    container.replaceChildren("No results");
   } else {
-// generate projects
-
+    const childElements = generateProjects(projectsToDisplay);
+    container.replaceChildren(...childElements);
   }
+}
+
+function debounce(func, delay) {
+  let timeoutId;
+  return function (...args) {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
 }
 
 function filterProjects(event) {
   const searchTerm = event.target.value.toLowerCase();
-// what if search temr empty????
   const filteredProjects = projects.filter(
     (project) =>
       project.name.toLowerCase().includes(searchTerm) ||
-      project.description.toLowerCase().includes(searchTerm),
+      project.text.toLowerCase().includes(searchTerm),
   );
 
   displayProjects(filteredProjects);
 }
-
-document
-  .getElementsByClassName("searchInput")
-  .addEventListener("input", filterProjects);
